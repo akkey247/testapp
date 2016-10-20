@@ -5,17 +5,18 @@
 <script type="text/javascript">
 <!--
 $( function() {
-  $('#ajax-button').onclick(function(){
+  $('#ajax-button').click(function(){
     $.ajax( {
-      url: 'jquery-sample-ajax-php.php',
+      url: 'ajax-result.php',
       data: {
-        year: '2011',
-        month: '11',
-        day: '24'
+        host: $('.host').val(),
+        dbname: $('.dbname').val(),
+        user: $('.user').val(),
+        pass: $('.pass').val()
       },
       success: function( data ) {
-        $('#result-box').html(data);
-        $('#connection-status').text('読み込み成功');
+        $('#ajax-status').text('読み込み成功');
+        $('#connection-status').text(data);
       },
       error: function( data ) {
         $('#connection-status').text('読み込み失敗');
@@ -27,10 +28,14 @@ $( function() {
 </script>
 </head>
 <body>
+  <input type="text" name="host" class="host" />
+  <input type="text" name="dbname" class="dbname" />
+  <input type="text" name="user" class="user" />
+  <input type="text" name="pass" class="pass" />
   <p>
-    <button id="ajax-button">クリック</button>
-    <span id="connection-status"></span>
+    <button id="ajax-button">接続</button>
   </p>
-  <div id="result-box"></div>
+  <p id="ajax-status"></p>
+  <p id="connection-status"></p>
 </body>
 </html>
