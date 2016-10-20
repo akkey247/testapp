@@ -5,8 +5,7 @@
 <?php
 
 $url = parse_url(getenv('DATABASE_URL'));
-$conn = "host=".$url['host']." dbname=".$url['path']." user=".$url['user']." password=".$url['pass'];
-$conn = "host=ec2-54-163-240-101.compute-1.amazonaws.com dbname=d1veaqbn0k62ec user=fvyxrngiifinat password=ElEjbJWbzUw5xnjOoRgG-nNJ1x";
+$conn = "host=".$url['host']." dbname=".substr($url["path"], 1)." user=".$url['user']." password=".$url['pass'];
 $link = pg_connect($conn);
 if (!$link) {
     print($conn);

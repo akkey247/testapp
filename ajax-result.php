@@ -3,7 +3,6 @@
 $conn = "host=".$_GET['host']." dbname=".$_GET['dbname']." user=".$_GET['user']." password=".$_GET['pass'];
 $link = pg_connect($conn);
 if (!$link) {
-    print($conn);
     die('接続失敗です。'.pg_last_error());
 }
 
