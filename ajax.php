@@ -1,5 +1,5 @@
 <html>
-<head><title>PHP TEST 2</title></head>
+<head><title>PHP TEST 2</title>
 <script
   src="http://code.jquery.com/jquery-3.1.1.js"
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
@@ -49,6 +49,7 @@ jQuery( function() {
 }
 -->
 </style>
+</head>
 <body>
 <div id="jquery-sample">
     <p>
