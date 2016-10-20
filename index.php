@@ -8,6 +8,7 @@ $url = parse_url(getenv('DATABASE_URL'));
 $conn = "host=".$url['host']." dbname=".$url['path']." user=".$url['user']." password=".$url['pass'];
 $link = pg_connect($conn);
 if (!$link) {
+    print($conn);
     die('接続失敗です。'.pg_last_error());
 }
 
