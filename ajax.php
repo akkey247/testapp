@@ -28,10 +28,10 @@ $( function() {
 </script>
 </head>
 <body>
-  <input type="text" name="host" class="host" />
-  <input type="text" name="dbname" class="dbname" />
-  <input type="text" name="user" class="user" />
-  <input type="text" name="pass" class="pass" />
+  <p>host: <input type="text" name="host" class="host" /></p>
+  <p>dbname: <input type="text" name="dbname" class="dbname" /></p>
+  <p>user: <input type="text" name="user" class="user" /></p>
+  <p>pass: <input type="text" name="pass" class="pass" /></p>
   <p>
     <button id="ajax-button">接続</button>
   </p>
