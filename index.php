@@ -1,36 +1,30 @@
-<html>
-<head><title>PHP TEST</title></head>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Webデザインラボ</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="sample.css">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<script src="sample.js"></script>
+</head>
 <body>
-
-<?php
-
-$url = parse_url(getenv('DATABASE_URL'));
-
-print('host: '.$url['host'].'<br>');
-print('dbname: '.substr($url['path'], 1).'<br>');
-print('user: '.$url['user'].'<br>');
-print('password: '.$url['pass'].'<br>');
-
-$conn = "host=".$url['host']
-        ." dbname=".substr($url["path"], 1)
-        ." user=".$url['user']
-        ." password=".$url['pass'];
-$link = pg_connect($conn);
-if (!$link) {
-  print($conn);
-  die('接続失敗です。'.pg_last_error());
-}
-
-print('接続に成功しました。<br>');
-
-// PostgreSQLに対する処理
-
-$close_flag = pg_close($link);
-
-if ($close_flag){
-  print('切断に成功しました。<br>');
-}
-
-?>
+<header>ヘッダー</header>
+<nav>ナビ</nav>
+<article>
+<h1>タイトル</h1>
+<section>
+<h2>セクションタイトル</h2>
+<p>コンテント</p>
+</section>
+</article>
+<aside>その他セクション</aside>
+<footer>フッター</footer>
 </body>
 </html>
