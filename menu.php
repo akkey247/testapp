@@ -21,8 +21,8 @@
 </nav>
 <script type="text/javascript">
 $(function(){
-$('#menu li a').each(function(){
-var $href = $(this).attr('href');
+$('#menu li').each(function(){
+var $href = $(this).children('a').attr('href');
 if(location.href.match($href)) {
 $(this).addClass('active');
 } else {
