@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="collapse navbar-collapse" id="navbarEexample1">
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav" id="menu">
 				<li><a href="https://test-app-3285.herokuapp.com/index.php">メニューＡ</a></li>
 				<li><a href="https://test-app-3285.herokuapp.com/index.php">メニューＢ</a></li>
 				<li><a href="https://test-app-3285.herokuapp.com/index.php">メニューＣ</a></li>
@@ -21,7 +21,7 @@
 </nav>
 <script type="text/javascript">
 $(function(){
-$('#nav li a').each(function(){
+$('#menu li a').each(function(){
 var $href = $(this).attr('href');
 if(location.href.match($href)) {
 $(this).addClass('active');
