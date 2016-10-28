@@ -1,5 +1,5 @@
 <html>
-<head><title>PHP TEST 2</title>
+<head><title>Ajax通信でDB接続結果を取得</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <script type="text/javascript">

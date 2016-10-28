@@ -1,5 +1,5 @@
 <html>
-<head><title>PHP TEST</title></head>
+<head><title>普通にDB接続結果を取得</title></head>
 <body>
 
 <?php
