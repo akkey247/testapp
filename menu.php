@@ -12,10 +12,22 @@
 
 		<div class="collapse navbar-collapse" id="navbarEexample1">
 			<ul class="nav navbar-nav">
-				<li><a href="#">メニューＡ</a></li>
-				<li class="active"><a href="#">メニューＢ</a></li>
-				<li><a href="#">メニューＣ</a></li>
+				<li><a href="https://test-app-3285.herokuapp.com/index.php">メニューＡ</a></li>
+				<li><a href="https://test-app-3285.herokuapp.com/index.php">メニューＢ</a></li>
+				<li><a href="https://test-app-3285.herokuapp.com/index.php">メニューＣ</a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
+<script type="text/javascript">
+$(function(){
+$('#nav li a').each(function(){
+var $href = $(this).attr('href');
+if(location.href.match($href)) {
+$(this).addClass('active');
+} else {
+$(this).removeClass('active');
+}
+});
+});
+</script>
