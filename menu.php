@@ -13,8 +13,8 @@
 		<div class="collapse navbar-collapse" id="navbarEexample1">
 			<ul class="nav navbar-nav" id="menu">
 				<li><a href="https://test-app-3285.herokuapp.com/index.php">メニューＡ</a></li>
-				<li><a href="https://test-app-3285.herokuapp.com/index.php">メニューＢ</a></li>
-				<li><a href="https://test-app-3285.herokuapp.com/index.php">メニューＣ</a></li>
+				<li><a href="https://test-app-3285.herokuapp.com/page_b.php">メニューＢ</a></li>
+				<li><a href="https://test-app-3285.herokuapp.com/page_c.php">メニューＣ</a></li>
 			</ul>
 		</div>
 	</div>
