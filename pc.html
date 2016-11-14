@@ -3,19 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>PC側</title>
-  <!-- jQueryの読み込み -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 
   <!-- milkcocoa.jsの読み込み -->
-  <script src='https://cdn.mlkcca.com/v2.0.0/milkcocoa.js'></script>
+  <script src="https://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
   <script>
-    var milkcocoa = new MilkCocoa('hotivgbc6pr.mlkcca.com');
-    var datastore = milkcocoa.dataStore('testapp');
+    var milkcocoa = new MilkCocoa("hotivgbc6pr.mlkcca.com");
+    var datastore = milkcocoa.dataStore("testapp");
   </script>
 
   <!-- 動作処理 -->
   <script>
-    datastore.on('send', function(sent){
+    datastore.on("send", function(sent){
       alert(sent.value.message);
     });
   </script>
