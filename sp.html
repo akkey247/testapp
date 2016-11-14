@@ -17,7 +17,7 @@
   <script>
     $(document).on('touchend', function() {
       alert("タッチしました")
-      datastore.send({'content':'Hello World!!'}, function(err, sent){
+      datastore.send({'message':'Hello World!!'}, function(err, sent){
         alert("送信完了");
       }, function(err) {
         alert("送信失敗");
