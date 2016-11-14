@@ -20,6 +20,7 @@
   });
 
   $(document).on('touched', function() {
+    alert("タッチしました")
     datastore.send({'content' : 'Hello!!!'}, function(err, sent){
         //サーバに到達
         console.log(sent);
@@ -30,6 +31,7 @@
             }
         }
         */
+      alert("送信しました")
     }, function(err) {
         //"Permission denied" or "limit exceeded"
     });
