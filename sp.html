@@ -1,21 +1,11 @@
 <!– (1) milkcocoa.jsの読み込み –>
-<script src=”http://cdn.mlkcca.com/v2.0.0/m
-ilkcocoa.js”></script>
+<script src='http://cdn.mlkcca.com/v2.0.0/milkcocoa.js'></script>
 
 <!– milkcocoaのセットアップ –>
 <script>
 　　var milkcocoa = new MilkCocoa('hotivgbc6pr.mlkcca.com'); // (2) セットアップはこれだけ！(1行)
 　　var datastore = milkcocoa.dataStore('testapp'); // (3) データストアへの接続
 
-　　// (4) 加速度センサの値をPCサイト側に送信
-　　window.addEventListener(“devicemot
-ion”, function(e) {
-　　　　datastore.send({
-　　　　　　x: e.accelerationIncludingGravity.x,
-　　　　　　y: e.accelerationIncludingGravity.y,
-　　　　　　z: e.accelerationIncludingGravity.z
-　　　　});
-　　});
   $(document).ready(function() {
 
     $(this).gShake(function() {

@@ -1,6 +1,5 @@
 <!– (1) milkcocoa.jsの読み込み –>
-<script src=”http://cdn.mlkcca.com/v2.0.0/m
-ilkcocoa.js”></script>
+<script src='http://cdn.mlkcca.com/v2.0.0/milkcocoa.js'></script>
 
 <!– milkcocoaのセットアップ –>
 <script>
@@ -8,7 +7,7 @@ ilkcocoa.js”></script>
 　　var datastore = milkcocoa.dataStore('testapp'); // (3) データストアへの接続
 
 　　// (4) スマートフォンから送信された値を受け取る
-　　datastore.on(‘send’, function(sent){
+　　datastore.on('send', function(sent){
 　　　　alert(sent.value);
 　　});
 </script>
