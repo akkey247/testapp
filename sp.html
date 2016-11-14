@@ -19,7 +19,7 @@
     });
   });
 
-  $(document).on('touched', function() {
+  $(document).on('touchend', function() {
     alert("タッチしました")
     datastore.send({'content' : 'Hello!!!'}, function(err, sent){
         //サーバに到達
