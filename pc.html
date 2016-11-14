@@ -26,7 +26,7 @@
         alert(sent.value);
     });
 
-    $(document).on('click',function(){
+    $(document).click(function() {
         datastore.send({'content' : 'Hello!!!'}, function(err, sent){
             //サーバに到達
             console.log(sent);
