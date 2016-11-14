@@ -3,31 +3,22 @@
 <head>
 <meta charset="utf-8" />
 <title>SP side.</title>
-<!--[if IE]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-
-<![endif]-->
-<style>
-  article, aside, dialog, figure, footer, header,
-  hgroup, menu, nav, section { display: block; }
-</style>
-<!-- (1) milkcocoa.jsの読み込み -->
+<!-- milkcocoa.jsの読み込み -->
 <script src='https://cdn.mlkcca.com/v2.0.0/milkcocoa.js'></script>
-
 <!-- milkcocoaのセットアップ -->
 <script>
 　　var milkcocoa = new MilkCocoa('hotivgbc6pr.mlkcca.com'); // (2) セットアップはこれだけ！(1行)
 　　var datastore = milkcocoa.dataStore('testapp'); // (3) データストアへの接続
-
-　　// (4) スマートフォンから送信された値を受け取る
-　　datastore.on('send', function(sent){
-　　　　alert(sent.value);
-　　});
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js
-" type="text/javascript" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="lib/gShake.js" type="text/javascript" charset="utf-8" ></script>
-<script src="js/application.js" type="text/javascript" charset="utf-8"></script>
+<script>
+  $(document).ready(function() {
+    $(this).gShake(function() {
+      alert("function loaded from document")
+    });
+  });
+</script>
 </head>
 <body>
 <h1>gShake Sampler</h1>
