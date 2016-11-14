@@ -1,46 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="utf-8" />
-<title>SP side.</title>
-<!-- milkcocoa.jsの読み込み -->
-<script src='https://cdn.mlkcca.com/v2.0.0/milkcocoa.js'></script>
-<!-- milkcocoaのセットアップ -->
-<script>
-　　var milkcocoa = new MilkCocoa('hotivgbc6pr.mlkcca.com'); // (2) セットアップはこれだけ！(1行)
-　　var datastore = milkcocoa.dataStore('testapp'); // (3) データストアへの接続
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="lib/gShake.js" type="text/javascript" charset="utf-8" ></script>
-<script>
-  $(document).ready(function() {
-    $(this).gShake(function() {
-      alert("function loaded from document")
-    });
-  });
+  <meta charset="utf-8">
+  <title>スマホ側</title>
+  <!-- jQueryの読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 
-  $(document).on('touchend', function() {
-    alert("タッチしました")
-    datastore.send({'content' : 'Hello!!!'}, function(err, sent){
-        //サーバに到達
-        console.log(sent);
-        /*
-        {
-            value: {
-                content: 'Hello!!!'
-            }
-        }
-        */
-      alert("送信しました")
-    }, function(err) {
-        //"Permission denied" or "limit exceeded"
+  <!-- milkcocoa.jsの読み込み -->
+  <script src='https://cdn.mlkcca.com/v2.0.0/milkcocoa.js'></script>
+  <script>
+    var milkcocoa = new MilkCocoa('hotivgbc6pr.mlkcca.com');
+    var datastore = milkcocoa.dataStore('testapp');
+  </script>
+
+  <!-- 動作処理 -->
+  <script>
+    $(document).on('touchend', function() {
+      alert("タッチしました")
+      datastore.send('Hello World!!', function(err, sent){
+        alert("送信完了");
+      }, function(err) {
+        alert("送信失敗");
+      });
     });
-});
-</script>
+  </script>
 </head>
 <body>
-<h1>gShake Sampler</h1>
-<hr>
-<address></address>
-<!-- hhmts start -->Last modified: Wed Jun 15 12:12:03 PDT 2011 <!-- hhmts end -->
-</body> </html>
+  <h1>スマホ側</h1>
+</body>
+</html>

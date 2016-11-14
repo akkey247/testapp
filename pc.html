@@ -1,49 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="utf-8" />
-<title>SP side.</title>
-<!--[if IE]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <meta charset="utf-8">
+  <title>PC側</title>
+  <!-- jQueryの読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 
-<![endif]-->
-<style>
-  article, aside, dialog, figure, footer, header,
-  hgroup, menu, nav, section { display: block; }
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <!-- milkcocoa.jsの読み込み -->
+  <script src='https://cdn.mlkcca.com/v2.0.0/milkcocoa.js'></script>
+  <script>
+    var milkcocoa = new MilkCocoa('hotivgbc6pr.mlkcca.com');
+    var datastore = milkcocoa.dataStore('testapp');
+  </script>
 
-<!-- (1) milkcocoa.jsの読み込み -->
-<script src='https://cdn.mlkcca.com/v2.0.0/milkcocoa.js'></script>
-
-<!-- milkcocoaのセットアップ -->
-<script>
-    var milkcocoa = new MilkCocoa('hotivgbc6pr.mlkcca.com'); // (2) セットアップはこれだけ！(1行)
-    var datastore = milkcocoa.dataStore('testapp'); // (3) データストアへの接続
-
-    // (4) スマートフォンから送信された値を受け取る
+  <!-- 動作処理 -->
+  <script>
     datastore.on('send', function(sent){
-        alert(sent.value);
+      alert(sent.value);
     });
-
-    $(document).click(function() {
-        datastore.send({'content' : 'Hello!!!'}, function(err, sent){
-            //サーバに到達
-            console.log(sent);
-            /*
-            {
-                value: {
-                    content: 'Hello!!!'
-                }
-            }
-            */
-        }, function(err) {
-            //"Permission denied" or "limit exceeded"
-        });
-    });
-</script>
+  </script>
 </head>
 <body>
-<p>SP Side.</p>
+  <h1>PC側</h1>
 </body>
 </html>
