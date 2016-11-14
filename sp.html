@@ -13,7 +13,7 @@
 
   <!-- 動作処理 -->
   <script>
-    document.body.addEventListener("touchend", function(e) {
+    document.addEventListener("touchend", function(e) {
       alert("タッチしました")
       datastore.send({"message":"Hello World!!"}, function(err, sent){
         alert("送信完了");
