@@ -10,7 +10,7 @@
 　　var milkcocoa = new MilkCocoa('hotivgbc6pr.mlkcca.com'); // (2) セットアップはこれだけ！(1行)
 　　var datastore = milkcocoa.dataStore('testapp'); // (3) データストアへの接続
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="lib/gShake.js" type="text/javascript" charset="utf-8" ></script>
 <script>
   $(document).ready(function() {
@@ -18,6 +18,22 @@
       alert("function loaded from document")
     });
   });
+
+  $(document).on('touched', function() {
+    datastore.send({'content' : 'Hello!!!'}, function(err, sent){
+        //サーバに到達
+        console.log(sent);
+        /*
+        {
+            value: {
+                content: 'Hello!!!'
+            }
+        }
+        */
+    }, function(err) {
+        //"Permission denied" or "limit exceeded"
+    });
+});
 </script>
 </head>
 <body>
