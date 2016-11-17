@@ -7,14 +7,18 @@
   <!-- milkcocoa.jsの読み込み -->
   <script src="https://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
   <script>
+    // milkcocoaオブジェクトを作成
     var milkcocoa = new MilkCocoa("hotivgbc6pr.mlkcca.com");
+    // dataStoreオブジェクトを作成
     var datastore = milkcocoa.dataStore("testapp");
   </script>
 
   <!-- 動作処理 -->
   <script>
+    // タッチ動作を検知したら実行
     document.addEventListener("touchend", function(e) {
       alert("タッチしました")
+      // データストアにデータを送信
       datastore.send({"message":"Hello World!!"}, function(err, sent){
         alert("送信完了");
       }, function(err) {
