@@ -29,6 +29,10 @@
       if (navigator.geolocation) {
         // 現在位置を取得できる場合の処理
         alert("あなたの端末では、現在位置を取得することができます。");
+        navigator.geolocation.getCurrentPosition(function(pos) {
+          // 取得成功時の処理
+          alert("緯度:"+pos.coords.latitude+",経度:"+pos.coords.longitude+",誤差:"+pos.coords.accuracy);
+        });
       // Geolocation APIに対応していない
       } else {
         // 現在位置を取得できない場合の処理
