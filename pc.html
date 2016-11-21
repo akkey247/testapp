@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>PC側</title>
+
+  <!-- milkcocoa.jsの読み込み -->
+  <script src="https://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+  <script>
+    // milkcocoaオブジェクトを作成
+    var milkcocoa = new MilkCocoa("【app_id】.mlkcca.com");
+    // dataStoreオブジェクトを作成
+    var datastore = milkcocoa.dataStore("【データストア名】");
+  </script>
+
+  <!-- 動作処理 -->
+  <script>
+    // データストアへのデータ受信を監視、受信したら実行
+    datastore.on("send", function(sent){
+      // 受信したメッセージを表示
+      alert(sent.value.message);
+    });
+  </script>
+</head>
+<body>
+  <h1>PC側</h1>
+</body>
+</html>

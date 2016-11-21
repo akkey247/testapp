@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>スマホ側</title>
+
+  <!-- milkcocoa.jsの読み込み -->
+  <script src="https://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+  <script>
+    // milkcocoaオブジェクトを作成
+    var milkcocoa = new MilkCocoa("【app_id】.mlkcca.com");
+    // dataStoreオブジェクトを作成
+    var datastore = milkcocoa.dataStore("【データストア名】");
+  </script>
+
+  <!-- 動作処理 -->
+  <script>
+    // タッチ動作を検知したら実行
+    document.addEventListener("touchend", function(e) {
+      alert("タッチしました")
+      // データストアにデータを送信
+      datastore.send({"message":"Hello World!!"}, function(err, sent){
+        alert("送信完了");
+      }, function(err) {
+        alert("送信失敗");
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>スマホ側</h1>
+</body>
+</html>
