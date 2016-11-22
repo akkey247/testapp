@@ -2,57 +2,51 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>位置情報取得サンプル</title>
+  <title>位置情報取得サンプル2</title>
 
   <!-- 動作処理 -->
   <script>
-    // Geolocation APIに対応している
-    if (navigator.geolocation) {
-      alert("この端末では位置情報が取得できます");
-    // Geolocation APIに対応していない
-    } else {
-      alert("この端末では位置情報が取得できません");
-    }
-
     // 現在地取得処理
     function initMap() {
-      // 現在地を取得
-      navigator.geolocation.getCurrentPosition(
-        // 取得成功した場合
-        function(position) {
-          alert("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
-          var opts = {
-            zoom: 15,
-            center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
-          };
-          var map = new google.maps.Map(document.getElementById("map"), opts);
-        },
-        // 取得失敗した場合
-        function(error) {
-          switch(error.code) {
-            case 1: //PERMISSION_DENIED
-              alert("位置情報の利用が許可されていません");
-              break;
-            case 2: //POSITION_UNAVAILABLE
-              alert("現在位置が取得できませんでした");
-              break;
-            case 3: //TIMEOUT
-              alert("タイムアウトになりました");
-              break;
-            default:
-              alert("その他のエラー(エラーコード:"+error.code+")");
-              break;
+      // Geolocation APIに対応している
+      if (navigator.geolocation) {
+        // 現在地を取得
+        navigator.geolocation.getCurrentPosition(
+          // 取得成功した場合
+          function(position) {
+            var opts = {
+              center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
+            };
+            var map = new google.maps.Map(document.getElementById("map"), opts);
+          },
+          // 取得失敗した場合
+          function(error) {
+            switch(error.code) {
+              case 1: //PERMISSION_DENIED
+                alert("位置情報の利用が許可されていません");
+                break;
+              case 2: //POSITION_UNAVAILABLE
+                alert("現在位置が取得できませんでした");
+                break;
+              case 3: //TIMEOUT
+                alert("タイムアウトになりました");
+                break;
+              default:
+                alert("その他のエラー(エラーコード:"+error.code+")");
+                break;
+            }
           }
-        }
-      );
+        );
+      // Geolocation APIに対応していない
+      } else {
+        alert("この端末では位置情報が取得できません");
+      }
     }
   </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhi2oc-uAYZ4cCD1GpQjSn2DL05w8Eao0&callback=initMap"></script>
 </head>
 <body>
-  <h1>位置情報取得サンプル</h1>
-  <div id="map" style="width:620px; height:400px"></div>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhi2oc-uAYZ4cCD1GpQjSn2DL05w8Eao0&callback=initMap">
-  </script>
+  <h1>位置情報取得サンプル2</h1>
+  <div id="map" style="width:400px;height:300px;"></div>
 </body>
 </html>
