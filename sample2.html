@@ -15,7 +15,6 @@
           // 取得成功した場合
           function(position) {
             var opts = {
-              zoom: 15,
               center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
             };
             var map = new google.maps.Map(document.getElementById("map"), opts);
