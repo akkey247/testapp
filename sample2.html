@@ -14,10 +14,16 @@
         navigator.geolocation.getCurrentPosition(
           // 取得成功した場合
           function(position) {
-            var opts = {
+            var mapOptions = {
+              zoom: 15,
               center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
             };
-            var map = new google.maps.Map(document.getElementById("map"), opts);
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            //地図上にマーカーを配置する
+            var marker = new google.maps.Marker({
+              position : new google.maps.LatLng(position.coords.latitude,position.coords.longitude), //緯度・経度
+              map : map          //表示する地図
+            });
           },
           // 取得失敗した場合
           function(error) {
