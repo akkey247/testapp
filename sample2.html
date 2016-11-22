@@ -2,21 +2,18 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>位置情報取得サンプル2</title>
+  <title>位置情報取得サンプル</title>
 
   <!-- 動作処理 -->
   <script>
     // 現在地取得処理
     function initMap() {
-      alert("initMap()");
       // Geolocation APIに対応している
       if (navigator.geolocation) {
-        alert("Geolocation API対応");
         // 現在地を取得
         navigator.geolocation.getCurrentPosition(
           // 取得成功した場合
           function(position) {
-            alert("現在地を取得成功");
             var opts = {
               center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
             };
@@ -50,6 +47,8 @@
 <body>
   <h1>位置情報取得サンプル2</h1>
   <div id="map" style="width:400px;height:300px;"></div>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhi2oc-uAYZ4cCD1GpQjSn2DL05w8Eao0&callback=initMap"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhi2oc-uAYZ4cCD1GpQjSn2DL05w8Eao0&callback=initMap">
+  </script>
 </body>
 </html>
