@@ -14,7 +14,6 @@
         navigator.geolocation.getCurrentPosition(
           // 取得成功した場合
           function(position) {
-            alert("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
             var opts = {
               zoom: 15,
               center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
@@ -48,7 +47,7 @@
 </head>
 <body>
   <h1>位置情報取得サンプル</h1>
-  <div id="map" style="width:620px; height:400px"></div>
+  <div id="map" style="width:400px; height:300px"></div>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhi2oc-uAYZ4cCD1GpQjSn2DL05w8Eao0&callback=initMap">
   </script>
