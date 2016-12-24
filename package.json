@@ -1,4 +1,22 @@
 {
   "name": "testapp",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akkey247/testapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akkey247/testapp/issues"
+  },
+  "homepage": "https://github.com/akkey247/testapp#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
