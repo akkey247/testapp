@@ -1,5 +1,7 @@
 var express = require('express') //expressモジュール呼び出し
 var subfunc = require('test-module') //自分で作ったテストモジュールの呼び出し
+var test = require('./testClass.js') //自分で作ったテストクラスの呼び出し
+var calc = require('./calcClass.js') //自分で作った計算クラスの呼び出し
 var bodyParser = require('body-parser'); //JSON受け取り用にbody-parserモジュール呼び出し
 
 var app = express()
@@ -17,6 +19,33 @@ app.get('/hello', function (req, res) {
 // `/test` にアクセスした際に「test」と表示
 app.get('/test', function (req, res) {
   res.send(subfunc())
+})
+
+// `/test-class` にアクセスした際にクラスを初期化した際の文字を表示
+app.get('/test-class', function (req, res) {
+  test.init('kimoto akihiko');
+  res.send(test.getName())
+})
+
+// `/calc-add/:a/:b` にアクセスした際にa+bの値を表示
+app.get('/calc-add/:a/:b', function (req, res) {
+  calc.init(req.params.a, req.params.b);
+  res.send(calc.calcAdd())
+})
+// `/calc-sub/:a/:b` にアクセスした際にa-bの値を表示
+app.get('/calc-sub/:a/:b', function (req, res) {
+  calc.init(req.params.a, req.params.b);
+  res.send(calc.calcSub())
+})
+// `/calc-div/:a/:b` にアクセスした際にa*bの値を表示
+app.get('/calc-div/:a/:b', function (req, res) {
+  calc.init(req.params.a, req.params.b);
+  res.send(calc.calcDiv())
+})
+// `/calc-mul/:a/:b` にアクセスした際にa/bの値を表示
+app.get('/calc-mul/:a/:b', function (req, res) {
+  calc.init(req.params.a, req.params.b);
+  res.send(calc.calcMul())
 })
 
 // `/post-json` にPOSTリクエストを送ると内容を表示
